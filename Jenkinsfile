@@ -16,7 +16,7 @@ pipeline {
 
      stage('Test') {
             steps {
-                sh 'mvn test -Dtest=classname'
+                sh 'mvn test -Dtest=HelloWorld'
             }
             post {
                 always {
