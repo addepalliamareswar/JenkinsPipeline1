@@ -24,7 +24,7 @@ pipeline {
                 always {
                     junit 'target/surefire-reports/*.xml'
 
-                    slackNotifier(currentBuild.currentResult)
+                    slackNotifier(currentBuild.result)
                 }
             }
         }
