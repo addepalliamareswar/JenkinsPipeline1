@@ -1,4 +1,5 @@
 #!/usr/bin/env groovy 
+
 /* import shared library */
 @Library('jenkins-shared-library')_
 
@@ -23,6 +24,8 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
+
+                    sayHello 'Dave'
 
                 }
             }
