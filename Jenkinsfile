@@ -25,7 +25,7 @@ pipeline {
                 always {
                     junit 'target/surefire-reports/*.xml'
 
-                    sayHello "${currentBuild.result}"
+                    sayHello "${currentBuild.currentResult}"
 
                 }
             }
