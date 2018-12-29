@@ -1,6 +1,10 @@
 #!/usr/bin/env groovy
 
-def call(String name = 'human') {
-  echo "Hello, ${name}."
+def call(String result = 'SUCCESS') {
+  echo "Result, ${result}."
+
+  if (result == "SUCCESS") {
+       echo "Test Passed"
+  }
 }
 
