@@ -33,14 +33,6 @@ pipeline {
                 }
             }
         }
-     stage('Tagging the build') {
-      steps {
-            sh 'mvn --version'
-            //sh("git tag -a tag1 -m 'Jenkins'")
-            //sh('git push https://addepalliamareswar@gmail.com:@mar9908471028A@JenkinsPipeline1 --tags')
-
-      }
-     }
   }
   
 }
