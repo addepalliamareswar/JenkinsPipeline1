@@ -21,11 +21,14 @@ pipeline {
             steps {
                 sh 'mvn test -Dtest=HelloWorld'
             }
+          
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
 
-                    sayHello(currentBuild.currentResult)
+                     // Archieve artifacts
+                     pUtilities.archiveArtifacts()
+                     slackNotifier(currentBuild.currentResult)
 
                 }
             }
