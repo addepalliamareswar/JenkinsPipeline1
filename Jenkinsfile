@@ -27,7 +27,9 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
 
                      // Archieve artifacts
-                     pUtilities.archiveArtifacts()
+                    script {
+                        pUtilities.archiveArtifacts()
+                    }
                      slackNotifier(currentBuild.currentResult)
 
                 }
