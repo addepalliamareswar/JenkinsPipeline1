@@ -29,6 +29,11 @@ pipeline {
                      // Archieve artifacts
                     script {
                         pUtilities.archiveArtifacts()
+                        repositoryAccess = 'https://'
+                        repositoryAccessSeparator = '/'
+  
+                       echo "repository host: ${repositoryHost}" // github.com
+                       echo "repository path: ${repositoryPath}" // <user>/<repository>.git
                     }
                      slackNotifications(currentBuild.currentResult)
 
