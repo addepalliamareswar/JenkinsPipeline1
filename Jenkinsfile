@@ -29,6 +29,8 @@ pipeline {
                      // Archieve artifacts
                     script {
                         pUtilities.archiveArtifacts()
+                        sh("git tag -a 100 -m 'Jenkins'")
+                        sh('git push master --tags')
                     }
                      slackNotifications(currentBuild.currentResult)
 
