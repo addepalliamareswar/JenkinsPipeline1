@@ -30,7 +30,7 @@ pipeline {
                     script {
                         pUtilities.archiveArtifacts()
                     }
-                    // slackNotifier "${currentBuild.currentResult}"
+                     slackNotifications(currentBuild.currentResult)
 
                 }
             }
