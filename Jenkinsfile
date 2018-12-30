@@ -29,6 +29,10 @@ pipeline {
                      // Archieve artifacts
                     script {
                         pUtilities.archiveArtifacts()
+                         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '<CREDENTIAL_ID>',
+                    usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+
+println(env.USERNAME)
                     }
                      slackNotifications(currentBuild.currentResult)
 
