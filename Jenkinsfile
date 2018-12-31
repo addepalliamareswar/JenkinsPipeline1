@@ -6,7 +6,7 @@ pipeline {
    stages {
       stage('Tag the build') {
          steps {
-            echo "{GIT_USERNAME}"
+            echo "${GIT_USERNAME}"
             withCredentials([[$class: 'UsernamePasswordMultiBinding',
                 credentialsId: 'MyID',
                 usernameVariable: 'GIT_USERNAME',
