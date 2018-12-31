@@ -6,7 +6,10 @@ pipeline {
    stages {
       stage('Tag the build') {
          steps {
-          sh "git tag -a build100"
+          sh("git config user.name 'addepalliamareswar@gmail.com'")
+          sh("git config user.email 'addepalliamareswar@gmail.com'")
+          sh('git tag -a v1.0')
+          sh('git push --tags')
          }
       }
   }
