@@ -8,7 +8,7 @@ pipeline {
          steps {
           sh("git config user.name 'addepalliamareswar@gmail.com'")
           sh("git config user.email 'addepalliamareswar@gmail.com'")
-          sh('git tag -a v1.0 -m "created git tag"')
+          sh('git tag -a v1.1 -m "created git tag"')
 withCredentials([[$class: 'UsernamePasswordMultiBinding', 
                 credentialsId: 'MyID', 
                 usernameVariable: 'GIT_USERNAME', 
