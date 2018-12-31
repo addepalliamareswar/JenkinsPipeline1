@@ -9,7 +9,12 @@ pipeline {
           sh("git config user.name 'addepalliamareswar@gmail.com'")
           sh("git config user.email 'addepalliamareswar@gmail.com'")
           sh('git tag -a v1.0 -m "created git tag"')
-          sh('git push --tags')
+withCredentials([[$class: 'UsernamePasswordMultiBinding', 
+                credentialsId: 'MyID', 
+                usernameVariable: 'GIT_USERNAME', 
+                passwordVariable: 'GIT_PASSWORD']]) {    
+    sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@repo_url --tags')
+}
          }
       }
   }
