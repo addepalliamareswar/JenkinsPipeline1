@@ -1,40 +1,19 @@
-#!/usr/bin/env groovy 
-
-/* import shared library */
-@Library('jenkins-shared-library')_
+#!/usr/bin/env groovy
+  
 
 pipeline {
-   agent {
-      docker {
-          image 'maven:3-alpine'
-          args '-v /root/.m2:/root/.m2'
-      }
-   }
+   agent any
    stages {
-      stage('Build') {
+      stage('Tag the build') {
          steps {
-             sh 'mvn -B -DskipTests clean package'
+            withCredentials([[$class: 'UsernamePasswordMultiBinding',
+                credentialsId: 'MyID',
+                usernameVariable: 'GIT_USERNAME',
+                passwordVariable: 'GIT_PASSWORD']]) {
+                   sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@repo_url --tags')
+                }
          }
       }
-
-     stage('Test') {
-            steps {
-                sh 'mvn test -Dtest=HelloWorld'
-            }
-          
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-
-                     // Archieve artifacts
-                    script {
-                        pUtilities.archiveArtifacts()
-                    }
-                     slackNotifications(currentBuild.currentResult)
-
-                }
-            }
-        }
   }
-  
+
 }
