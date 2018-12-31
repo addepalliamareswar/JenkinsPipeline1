@@ -12,9 +12,9 @@ pipeline {
            
 withCredentials([[$class: 'UsernamePasswordMultiBinding', 
                 credentialsId: '7e3c12fd-0209-48a9-8f55-24e63992d694', 
-                usernameVariable: 'addepalliamareswar@gmail.com', 
-                passwordVariable: 'addepalliamareswar@gmail.com']]) {    
-    sh('git push git@github.com:addepalliamareswar:@mar9908471028A/JenkinsPipeline1.git --tags')
+                usernameVariable: 'addepalliamareswar', 
+                passwordVariable: '@mar9908471028A']]) {    
+    sh('git push https://addepalliamareswar@github.com/addepalliamareswar/JenkinsPipeline1.git --tags')
 }
          }
       }
