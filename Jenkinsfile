@@ -14,7 +14,7 @@ withCredentials([[$class: 'UsernamePasswordMultiBinding',
                 credentialsId: '7e3c12fd-0209-48a9-8f55-24e63992d694', 
                 usernameVariable: 'addepalliamareswar@gmail.com', 
                 passwordVariable: 'addepalliamareswar@gmail.com']]) {    
-    sh('git push https://github.com/JenkinsPipeline1.git --tags')
+    sh('git push git@github.com:addepalliamareswar/JenkinsPipeline1.git --tags')
 }
          }
       }
