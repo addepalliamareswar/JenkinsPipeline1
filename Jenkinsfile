@@ -8,7 +8,7 @@ pipeline {
  
          choice(name: 'Region', choices:['US-EAST-1', 'US-EAST-2'], description:'Select AWS Region')
 
-         booleanParam(name: 'userFlag', dafaultValue: true, description:''))
+         booleanParam(name: 'userFlag', dafaultValue: true, description:'')
    }
    stages {
       stage('Parameters Example') {
