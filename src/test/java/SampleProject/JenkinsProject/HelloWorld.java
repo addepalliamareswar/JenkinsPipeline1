@@ -8,6 +8,8 @@ public class HelloWorld {
     public void test1 () {
         
         System.out.println("Welcome to Jenkins");
+
+        System.out.println("Welcome to GIT");
     }
     
     
