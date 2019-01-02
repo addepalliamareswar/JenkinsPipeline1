@@ -9,7 +9,7 @@ public class HelloWorld {
         
         System.out.println("Welcome to Jenkins");
 
-        System.out.println("Welcome to GIT");
+        System.out.println("Welcome to GITHUB");
     }
     
     
